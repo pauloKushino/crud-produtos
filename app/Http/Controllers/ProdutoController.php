@@ -11,12 +11,10 @@ class ProdutoController extends Controller
     {
         $query = Produto::query();
 
-        // Verifica se há parâmetros de pesquisa
         if ($request->has('filter_type') && $request->has('search')) {
             $filterType = $request->input('filter_type');
             $search = $request->input('search');
 
-            // Aplica o filtro com base no tipo selecionado
             if ($filterType === 'id' && is_numeric($search)) {
                 $query->where('id', $search);
             } elseif ($filterType === 'nome') {
@@ -28,7 +26,7 @@ class ProdutoController extends Controller
             $query->orderBy($request->input('order_by'), 'asc');
         }
 
-        $produtos = $query->paginate(10); // Paginação com 10 itens por página
+        $produtos = $query->paginate(10); 
 
         return view('produtos.index', compact('produtos'));
     }
