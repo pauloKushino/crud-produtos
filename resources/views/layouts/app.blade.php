@@ -8,11 +8,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="{{ route('produtos.index') }}">CRUD Produtos</a>
-        </div>
-    </nav>
     <div class="container mt-4">
         @if(session('success'))
             <div class="alert alert-success">
